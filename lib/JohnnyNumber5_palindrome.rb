@@ -15,11 +15,15 @@ module JohnnyNumber5Palindrome
   private
 
     # Converts the string's content to lower case.
-    def processed_content
-      scan(/[a-z]/i).join.downcase
-    end
+  def processed_content
+    to_s.scan(/[a-z0-9]/i).join.downcase
+  end
 end
 
 class String
+  include JohnnyNumber5Palindrome
+end
+
+class Integer
   include JohnnyNumber5Palindrome
 end
