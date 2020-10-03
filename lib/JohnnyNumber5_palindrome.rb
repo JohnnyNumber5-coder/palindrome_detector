@@ -9,14 +9,15 @@ class String
 
   # Returns the letters in the string.
   def letters
-  the_letters = []
-  for i in 0..self.length - 1
-    if self[i].match(/[a-zA-Z]/)
-      the_letters << self[i]
+    the_letters = []
+    letter_regex = /[a-z]/i
+    self.chars.each do |character|
+      if character.match(letter_regex)
+        the_letters << character
+      end
     end
+    the_letters.join
   end
-  the_letters.join
-end
 
   private
 
